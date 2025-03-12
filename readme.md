@@ -1,5 +1,8 @@
 # 주제 선정 이유
-https://www.traveldaily.co.kr/news/articleView.html?idxno=52838
+
+[가성비 럭셔리 여행 기사](https://www.traveldaily.co.kr/news/articleView.html?idxno=52838)
+
+[가성비 여행 가이드 기사](https://www.sukbakmagazine.com/news/articleView.html?idxno=61073)
 # 데이터셋
 [뉴욕 에어비엔비 Open Data](https://www.kaggle.com/datasets/arianazmoudeh/airbnbopendata)
 # 데이터셋 Info
