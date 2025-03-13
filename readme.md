@@ -60,13 +60,19 @@
 # EDA 절차
 
 1. **데이터 로드**
-![]()
-
+```
+airbnb_df = pd.read_csv('./data/Airbnb_Open_Data.csv',low_memory=False)
+```
 
 ## 데이터 구조 기초 통계 확인
+- 데이터 프레임 정보
+![](/images/데이터프레임info.png)
+- 기본 통계 정보
+![](/images/이상치확인데이터.png)
 
 ## 결측치 및 이상치 탐색
-drop
+1. **불필요한 column 제거**
+```
     host_name
     country
     country_code
@@ -81,14 +87,31 @@ drop
     host id
     host_identity_verified
     host name
-
+```
     
-결측치
-    cancellation_policy : 결측치 제거 // 지윤
-    minimum nights : 결측치 1로 변경 => 0이하 제거 10이상 제거  // 유빈
-    number of reviews  : 0으로 변경  // 진슬 
-    
+2. **결측치 탐색**
+    ```
+    cancellation_policy : 
+    minimum nights : 
+    number of reviews  : 
+    neighbourhood :
+    neighbourhood group :
+    Construction year :
+    availability 365 :
+    price : 결측치 =>
+    service fee : 
+    reviews per month :
+    number of reviews  :
+    review rate number :
+    availability 365 :
+    ```
+## 데이터시각화를 통한 탐색
 
+## 데이터 정제 및 전처리
+ ```
+    cancellation_policy : 결측치 제거 
+    minimum nights : 결측치 1로 변경 => 0이하, 10이상 제거
+    number of reviews  : 0으로 변경
     neighbourhood : 결측치 제거
     neighbourhood group : 결측치 제거
     Construction year : 결측치 제거
@@ -100,6 +123,4 @@ drop
     review rate number : 0
     availability 365 : 365로 나누어서 예약율 값으로 변경
     지역별 
-## 데이터시각화를 통한 탐색
-
-## 데이터 정제 및 전처리
+    ```
