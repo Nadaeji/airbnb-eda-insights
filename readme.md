@@ -39,8 +39,8 @@
 ---
 ## 데이터 셋을 통해 얻고자 하는 인사이트
 1. **airbnb 숙소 선호도를 확인하고 숙소 예약에 영향을 주는 요소가 무엇인지** 
-2. **숙소 유형별 평균 가격 → 각 room type과 지역을 바탕으로 평균 가격** 
-3. **평점과 리뷰 수 예약율(연중 예약 가능 일수를 바탕으로 예약율 전처리)의 상관 관계**
+2. **숙소 유형별 평균 가격 → 각 room type과 지역을 바탕으로 평균 가격**  o
+3. **평점과 예약율(연중 예약 가능 일수를 바탕으로 예약율 전처리)의 상관 관계** o
 
 ## EDA 절차
 
@@ -60,7 +60,6 @@ drop
     instant_bookable
     long
     lat
-    neighbourhood
     NAME
     host id
     host_identity_verified
@@ -68,21 +67,17 @@ drop
 
     
 결측치
-
-    ### 나지윤
-    cancellation_policy : 결측치 제거
-    neighbourhood : 결측치 제거
-    Construction year : 결측치 제거
+    cancellation_policy : 결측치 제거 // 지윤
+    minimum nights : 결측치 1로 변경 => 0이하 제거 10이상 제거  // 유빈
+    number of reviews  : 0으로 변경  // 진슬
     
-    ### 현대
-    availability 365 : 결측치 제거 -> 0이하 제거 ,366 이상 제거
-    minimum nights : 결측치 1로 변경 => 0이하 제거 10이상 제거
 
-    ### 유빈
+    neighbourhood : 결측치 제거
+    neighbourhood group : 결측치 제거
+    Construction year : 결측치 제거
+    availability 365 : 결측치 제거 -> 50이하 제거 ,365 이상 제거
     price : 결측치 => roomtype별 평균 가격으로 대체 => int형 변환 => 50이하 제거 1000이상 제거 => $ => 000세개 붙이기
     service fee : 0으로 변경 결측치 => roomtype별 평균 가격으로 대체 => int형 변환 $ => 000세개 붙이기
-
-    ### 진슬
     reviews per month : 리뷰 수를 12으로 나눈 값으로 대체
     number of reviews  : 0으로 변경
     review rate number : 0
