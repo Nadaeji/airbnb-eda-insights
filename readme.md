@@ -17,7 +17,7 @@
 
 첨부된 기사에 따르면 많은 여행객들은 **가성비 좋은 숙소를 찾기 위해 리뷰와 가격을 꼼꼼히 비교**합니다.  
 그러나 방대한 숙소 정보 속에서 **어떤 숙소를 선택해야 할지 판단하는 것은 쉽지 않은 일**입니다.
-따라서 우리가 얻을 수 있는 데이터중 뉴욕주의 숙박 데이터를 통해 인사이트를 도춣해 보고자 합니다.
+따라서 우리가 얻을 수 있는 데이터중 뉴욕주의 숙박 데이터를 통해 인사이트를 연역적 접근 (Deductive Approach)을 통해 도춣해 보고자 합니다.
 
 📊 **데이터를 활용하면 객관적인 기준으로 최적의 숙소를 선택할 수 있습니다.**  
 이를 통해 **소비자는 자신의 요구와 예산에 맞는 숙소를 쉽게 찾을 수 있으며, 호스트들도 경쟁력을 높이기 위한 전략을 수립할 수 있습니다.**  
@@ -35,7 +35,15 @@
 **데이터 출처:** [뉴욕 에어비앤비 Open Data](https://www.kaggle.com/datasets/arianazmoudeh/airbnbopendata)  
 **데이터 내용:** 뉴욕의 에어비앤비 숙소 정보, 가격, 리뷰 수, 예약 가능 일수 등
 
----
+## 기술 스택
+### 데이터 시각화
+
+<img src="https://img.shields.io/badge/pandas-FF7900?style=for-the-badge&%20api&logoColor=orange"> |<img src="https://img.shields.io/badge/matplotlib-7A1FA2?style=for-the-badge&logoColor=purple">|<img src="https://img.shields.io/badge/Python-000000?style=for-the-badge&logo=%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EC%A0%95%EC%A0%9C&logoColor=white">|<img src="https://img.shields.io/badge/discord-blue?style=for-the-badge&logo=%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EC%A0%95%EC%A0%9C">|
+
+
+
+
+
 
 ## 🔍 DataSet을 통해 얻고자 하는 인사이트
 
@@ -90,7 +98,7 @@
 
 # EDA 절차
 
-1. **데이터 로드**
+1. **데이터 로드** 
 ```
 airbnb_df = pd.read_csv('./data/Airbnb_Open_Data.csv',low_memory=False)
 ```
@@ -102,28 +110,28 @@ airbnb_df = pd.read_csv('./data/Airbnb_Open_Data.csv',low_memory=False)
 ![](/images/이상치확인데이터.png)
 
 ## 결측치 및 이상치 탐색
-1. **불필요한 column 제거**
-```
-    host_name
-    country
-    country_code
-    calculated host listings count
-    license
-    house_rules
-    last review
-    instant_bookable
-    long
-    lat
-    NAME
-    host id
-    host_identity_verified
-    host name
-```
+
     
-2. **결측치 탐색**
-```
-데이터 시각화에 영향을 줄 결측치에 대해 제거 또는 치환 이후 이상치를 제거.
-```
+1. **결측치 탐색**
+
+![결측치 탐색](./images/결측치%20탐색.png)
+1. **불필요한 column 제거**
+    ```
+        host_name
+        country
+        country_code
+        calculated host listings count
+        license
+        house_rules
+        last review
+        instant_bookable
+        long
+        lat
+        NAME
+        host id
+        host_identity_verified
+        host name
+    ```
 - 결측치 제거
     ```
     cancellation_policy
