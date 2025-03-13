@@ -124,21 +124,101 @@ airbnb_df = pd.read_csv('./data/Airbnb_Open_Data.csv',low_memory=False)
     availability 365
     ```
 ## 데이터시각화를 통한 탐색
-
+- 룸타입별 가격과 리뷰 수의 관계 산점도 
+![](./images/가격과%20리뷰%20수의%20관계.png)
+- 건축년도와의 데이터 상관관계
+![](./images/건축%20년도에%20따른%20(평균%20가격,%20예약율,%20리뷰수).png)
+- 지역별 건축년도 건물 분포 그래프
+![](./images/건축년도별%20건물%20수.png)
+- 방 타입별 리뷰 수
+![](./images/방%20타입-%20리뷰수.png)
+- 상위 10개 주의 리뷰 수
+![](./images/상위10개의%20주.png)
+- 숙소 선호 상관 관계 히트맵
+![](./images/숙소%20선호도%20상관%20관계.png)
+- 숙소 유형별 갯수
+![](./images/숙소%20유형별%20선호도%20파악_숙소개수.png)
+- 숙소 종류별 예약율에 따른 평균 가격
+![](./images/숙소%20종류별%20예약율에%20따른%20평균%20가격.png)
+- 예약에 영향을 주는 상관관계
+![](./images/예약에%20영향을%20주는%20상관관계.png)
+- 전체 지역의 리뷰 막대 그래프프
+![](./images/전체%20지역-리뷰.png)
+- 지역 및 객식 유형별 평균 가격 히트맵
+![](./images/주%20및%20객실%20유형별%20평균%20가격.png)
 ## 데이터 정제 및 전처리
- ```
-    cancellation_policy : 결측치 제거 
-    minimum nights : 결측치 1로 변경 => 0이하, 10이상 제거
-    number of reviews  : 0으로 변경
-    neighbourhood : 결측치 제거
-    neighbourhood group : 결측치 제거
-    Construction year : 결측치 제거
-    availability 365 : 결측치 제거 -> 50이하 제거 ,365 이상 제거
-    price : 결측치 => roomtype별 평균 가격으로 대체 => int형 변환 => 50이하 제거 1000이상 제거 => $ => 000세개 붙이기
-    service fee : 0으로 변경 결측치 => roomtype별 평균 가격으로 대체 => int형 변환 $ => 000세개 붙이기
-    reviews per month : 리뷰 수를 12으로 나눈 값으로 대체
-    number of reviews  : 0으로 변경
-    review rate number : 0
-    availability 365 : 365로 나누어서 예약율 값으로 변경
-    지역별 
-    ```
+```python
+def fillna(df,columns,default=0):
+    for column in columns:
+        df[column] = df[column].fillna(default)
+    return df
+
+def dropna(df,column_list):
+    df = df.dropna(subset=column_list,axis=0)
+    return df
+def change_type(df,columns,type):
+    for column in columns:
+        df[column] = df[column].astype(type)
+    return df
+def cleaned_data(df: pd.DataFrame, columns: List[str], value: Union[int, float, List[Union[int, float]]], compare_type: str) -> pd.DataFrame:
+    if not columns:
+        raise ValueError("컬럼 리스트가 비어있습니다.")
+    
+    if compare_type == "over":
+        if not isinstance(value, (int, float)):
+            raise TypeError("value가 숫자가 아닙니다.")
+        for column in columns:
+            df = df[df[column] < value]
+    elif compare_type == "under":
+        if not isinstance(value, (int, float)):
+            raise TypeError("value가 숫자가 아닙니다.")
+        for column in columns:
+            df = df[df[column] > value]
+    elif compare_type == "between":
+        if not isinstance(value, (list, tuple)) or len(value) != 2:
+            raise TypeError("value가 리스트 또는 튜플이 아니거나 길이가 2가 아닙니다.")
+        lower, upper = value[0], value[1]
+        for column in columns:
+            df = df[(df[column] > lower) & (df[column] < upper)]
+    else:
+        raise ValueError(f"Invalid compare_type: {compare_type}. Use 'over', 'under', or 'between'")
+    return df
+```
+
+```python
+# room type 별 평균 가격 계산
+room_type_avg_price = airbnb_df.groupby('room type')['price'].mean()
+# 데이터 전처리
+airbnb_df = fillna(airbnb_df,['price'],airbnb_df['room type'].map(room_type_avg_price))
+airbnb_df = cleaned_data(airbnb_df,['price'],[50,1000],'between')
+airbnb_df = cleaned_data(airbnb_df,['availability 365'],[100,365],'between')
+airbnb_df = cleaned_data(airbnb_df,['number of reviews'],100,'over')
+airbnb_df = cleaned_data(airbnb_df,['minimum nights'],0,'under')
+airbnb_df = fillna(airbnb_df,['minimum nights'],1)
+airbnb_df = fillna(airbnb_df,['service fee','number of reviews','review rate number'])
+airbnb_df = fillna(airbnb_df,['reviews per month'],airbnb_df['review rate number']/12)
+airbnb_df = fillna(airbnb_df,['availability 365'],1)
+airbnb_df = dropna(airbnb_df,['Construction year','neighbourhood group','cancellation_policy'])
+airbnb_df = change_type(airbnb_df,['availability 365','number of reviews','Construction year'],int)
+airbnb_df['availability 365'] = round((365 - airbnb_df['availability 365']) / 365, 2)
+airbnb_df['price'] = airbnb_df['price'].astype(int) * 1400
+airbnb_df['service fee'] = airbnb_df['service fee'].astype(int) *1400
+```
+
+
+```python
+# Label Encoder 초기화
+le_neighbourhood = LabelEncoder()
+le_cancellation = LabelEncoder()
+le_room_type = LabelEncoder()
+
+# 범주형 데이터에 Label Encoding 적용
+airbnb_df['neighbourhood group'] = le_neighbourhood.fit_transform(airbnb_df['neighbourhood group'])
+airbnb_df['cancellation_policy'] = le_cancellation.fit_transform(airbnb_df['cancellation_policy'])
+airbnb_df['room type'] = le_room_type.fit_transform(airbnb_df['room type'])
+# 취소 정책의 유연성에 따라 재 정립
+airbnb_df['cancellation_policy'] = 2 - airbnb_df['cancellation_policy']
+
+
+
+```
