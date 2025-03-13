@@ -65,6 +65,8 @@ drop
     host id
     host_identity_verified
     host name
+
+    
 결측치 
     ### 나지윤
     cancellation_policy : 결측치 제거
