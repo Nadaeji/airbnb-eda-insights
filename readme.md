@@ -67,7 +67,8 @@ drop
     host name
 
     
-결측치 
+결측치
+
     ### 나지윤
     cancellation_policy : 결측치 제거
     neighbourhood : 결측치 제거
