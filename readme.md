@@ -24,10 +24,6 @@
 # 데이터셋
 ![NewYork Airbnb](/images/nyairbnb.jpg)
 [뉴욕 에어비엔비 Open Data](https://www.kaggle.com/datasets/arianazmoudeh/airbnbopendata)
-<<<<<<< HEAD
-=======
-[아시아 에어비엔비 데이터셋](https://www.kaggle.com/datasets/jaeseokanairbtics/airbnb-statistics-in-40-asian-cities)
->>>>>>> 8f9716708e6bb8804d70a2920fc19c5f1172630f
 
 
 # 데이터셋 Info
@@ -90,13 +86,8 @@ drop
 결측치
     cancellation_policy : 결측치 제거 // 지윤
     minimum nights : 결측치 1로 변경 => 0이하 제거 10이상 제거  // 유빈
-<<<<<<< HEAD
     number of reviews  : 0으로 변경  // 진슬 
     
-=======
-    number of reviews  : 0으로 변경  // 진슬
-
->>>>>>> 8f9716708e6bb8804d70a2920fc19c5f1172630f
 
     neighbourhood : 결측치 제거
     neighbourhood group : 결측치 제거

@@ -1,4 +1,4 @@
-id,neighbourhood group,neighbourhood,cancellation_policy,room type,Construction year,price,service fee,minimum nights,number of reviews,reviews per month,review rate number,availability 365
+id,neighbourhood group,neighbourhood,cancellation_policy,room type,Construction year,price,service fee,minimum nights,number of reviews,reviews per month,review rate number,booking_rate
 1001254,1,Kensington,0,2,2020,1352400,270200,10.0,9,0.21,4.0,0.22
 1002102,2,Midtown,1,0,2007,198800,39200,30.0,45,0.38,4.0,0.38
 1002403,2,Harlem,2,2,2005,868000,173600,3.0,0,0.4166666666666667,5.0,0.04
