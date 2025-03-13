@@ -90,20 +90,38 @@ airbnb_df = pd.read_csv('./data/Airbnb_Open_Data.csv',low_memory=False)
 ```
     
 2. **결측치 탐색**
+```
+데이터 시각화에 영향을 줄 결측치에 대해 제거 또는 치환 이후 이상치를 제거.
+```
+- 결측치 제거
     ```
-    cancellation_policy : 
-    minimum nights : 
-    number of reviews  : 
-    neighbourhood :
-    neighbourhood group :
-    Construction year :
-    availability 365 :
-    price : 결측치 =>
-    service fee : 
-    reviews per month :
-    number of reviews  :
-    review rate number :
-    availability 365 :
+    cancellation_policy
+    neighbourhood 
+    neighbourhood group
+    Construction year
+    availability 365
+    ```
+- 결측치 치환
+    ```
+    minimum nights
+    number of reviews 
+    service fee
+    price
+    reviews per month
+    number of reviews
+    review rate number
+    availability 365
+    ```
+- 이상치 탐색
+    ```
+    minimum nights
+    number of reviews
+    price
+    service fee
+    reviews per month
+    number of reviews
+    review rate number
+    availability 365
     ```
 ## 데이터시각화를 통한 탐색
 
