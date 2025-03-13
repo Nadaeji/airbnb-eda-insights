@@ -39,7 +39,7 @@
 ---
 ## 데이터 셋을 통해 얻고자 하는 인사이트
 1. **airbnb 숙소 선호도를 확인하고 숙소 예약에 영향을 주는 요소가 무엇인지** 
-2. **숙소 유형별 평균 가격 → room type별 바탕으로 평균 가격** 
+2. **숙소 유형별 평균 가격 → 각 room type과 지역을 바탕으로 평균 가격** 
 3. **평점과 리뷰 수 예약율(연중 예약 가능 일수를 바탕으로 예약율 전처리)의 상관 관계**
 
 ## EDA 절차
@@ -60,7 +60,7 @@ drop
     instant_bookable
     long
     lat
-    neighbourhood group
+    neighbourhood
     NAME
     host id
     host_identity_verified
@@ -83,6 +83,7 @@ drop
     reviews per month : 리뷰 수를 12으로 나눈 값으로 대체
     number of reviews  : 0으로 변경
     review rate number : 0
+    availability 365 : 365로 나누어서 예약율 값으로 변경
     
 ## 데이터시각화를 통한 탐색
 
