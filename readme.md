@@ -1,10 +1,33 @@
+# 🫡팀원 소개
+| 이현대 | 신진슬 | 전유빈 | 나지윤 |
+|--------|--------|--------|-------|
+| ![이현대](/images/01.jpg) | ![신진슬](/images/02.jpg) | ![전유빈](/images/03.jpeg) | ![나지윤](/images/04.jpg) |
+
+# DataSet을 통해 얻고자 하는 인사이트
+1. **airbnb 숙소 선호도를 확인, 숙소 예약에 영향을 주는 요소가 무엇인지?** 
+
+2. **숙소 유형별 평균 가격 → 각 room type과 지역을 바탕으로 평균 가격**  
+
+3. **평점과 예약율(연중 예약 가능 일수를 바탕으로 예약율 전처리)의 상관 관계** 
+
+
+# 📅개발기간
+2025.03.10 ~ 2025.03.13 (3일)
+
 # 주제 선정 이유
+![](https://www.traveldaily.co.kr/news/photo/202406/52838_53810_4952.jpg)
+
+**여행객들은 자신의 요구와 예산에 맞는 최적의 선택을 할 수 있으며, 데이터 기반 인사이트는 에어비앤비 호스트들에게도 유용한 정보를 제공할 수 있다.**
 
 [가성비 럭셔리 여행 기사](https://www.traveldaily.co.kr/news/articleView.html?idxno=52838)
 [가성비 여행 가이드 기사](https://www.sukbakmagazine.com/news/articleView.html?idxno=61073)
 # 데이터셋
+![NewYork Airbnb](/images/nyairbnb.jpg)
 [뉴욕 에어비엔비 Open Data](https://www.kaggle.com/datasets/arianazmoudeh/airbnbopendata)
+<<<<<<< HEAD
+=======
 [아시아 에어비엔비 데이터셋](https://www.kaggle.com/datasets/jaeseokanairbtics/airbnb-statistics-in-40-asian-cities)
+>>>>>>> 8f9716708e6bb8804d70a2920fc19c5f1172630f
 
 
 # 데이터셋 Info
@@ -38,15 +61,11 @@
 | license | 숙소의 공식 라이선스(허가) 여부 | object |
 
 
----
-## 데이터 셋을 통해 얻고자 하는 인사이트
-1. **airbnb 숙소 선호도를 확인하고 숙소 예약에 영향을 주는 요소가 무엇인지** 
-2. **숙소 유형별 평균 가격 → 각 room type과 지역을 바탕으로 평균 가격**  o
-3. **평점과 예약율(연중 예약 가능 일수를 바탕으로 예약율 전처리)의 상관 관계** o
+# EDA 절차
 
-## EDA 절차
+1. **데이터 로드**
+![]()
 
-## 데이터 로드
 
 ## 데이터 구조 기초 통계 확인
 
@@ -71,8 +90,13 @@ drop
 결측치
     cancellation_policy : 결측치 제거 // 지윤
     minimum nights : 결측치 1로 변경 => 0이하 제거 10이상 제거  // 유빈
+<<<<<<< HEAD
+    number of reviews  : 0으로 변경  // 진슬 
+    
+=======
     number of reviews  : 0으로 변경  // 진슬
 
+>>>>>>> 8f9716708e6bb8804d70a2920fc19c5f1172630f
 
     neighbourhood : 결측치 제거
     neighbourhood group : 결측치 제거
