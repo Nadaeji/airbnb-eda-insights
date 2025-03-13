@@ -1,10 +1,12 @@
 # 주제 선정 이유
 
 [가성비 럭셔리 여행 기사](https://www.traveldaily.co.kr/news/articleView.html?idxno=52838)
-
 [가성비 여행 가이드 기사](https://www.sukbakmagazine.com/news/articleView.html?idxno=61073)
 # 데이터셋
 [뉴욕 에어비엔비 Open Data](https://www.kaggle.com/datasets/arianazmoudeh/airbnbopendata)
+[아시아 에어비엔비 데이터셋](https://www.kaggle.com/datasets/jaeseokanairbtics/airbnb-statistics-in-40-asian-cities)
+
+
 # 데이터셋 Info
 | 속성 | 설명 | 데이터 타입 |
 | --- | --- | --- |
@@ -70,7 +72,7 @@ drop
     cancellation_policy : 결측치 제거 // 지윤
     minimum nights : 결측치 1로 변경 => 0이하 제거 10이상 제거  // 유빈
     number of reviews  : 0으로 변경  // 진슬
-    
+
 
     neighbourhood : 결측치 제거
     neighbourhood group : 결측치 제거
@@ -82,7 +84,7 @@ drop
     number of reviews  : 0으로 변경
     review rate number : 0
     availability 365 : 365로 나누어서 예약율 값으로 변경
-    
+    지역별 
 ## 데이터시각화를 통한 탐색
 
 ## 데이터 정제 및 전처리
