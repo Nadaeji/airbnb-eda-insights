@@ -395,6 +395,5 @@ airbnb_df['cancellation_policy'] = 2 - airbnb_df['cancellation_policy']
 > 🔗 **[에어비앤비 Open Data 컬럼 설명](https://docs.google.com/spreadsheets/d/1iWCNJcSutYqpULSQHlNyGInUvHg2BoUGoNRIGa6Szc4/edit?gid=1322284596#gid=1322284596)**  
 > 해당 문서에서 `availability_365` 컬럼의 정의를 확인할 수 있습니다.
 
+에러 페어
 [![YouTube 영상](https://img.youtube.com/vi/bWoW2wectB0/0.jpg)](https://www.youtube.com/watch?v=bWoW2wectB0)
-
-
