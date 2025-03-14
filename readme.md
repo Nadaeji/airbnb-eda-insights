@@ -29,7 +29,7 @@
 
 첨부된 기사에 따르면 많은 여행객들은 **가성비 좋은 숙소를 찾기 위해 리뷰와 가격을 꼼꼼히 비교**합니다.  
 그러나 방대한 숙소 정보 속에서 **어떤 숙소를 선택해야 할지 판단하는 것은 쉽지 않은 일**입니다.
-따라서 우리가 얻을 수 있는 데이터중 뉴욕주의 숙박 데이터를 통해 인사이트를 연역적 접근 (Deductive Approach)을 통해 도춣해 보고자 합니다.
+따라서 우리가 얻을 수 있는 데이터중 뉴욕주의 숙박 데이터를 통해 인사이트를 연역적 접근 (Deductive Approach)을 통해 도출해 보고자 합니다.
 
 📊 **데이터를 활용하면 객관적인 기준으로 최적의 숙소를 선택할 수 있습니다.**  
 이를 통해 **소비자는 자신의 요구와 예산에 맞는 숙소를 쉽게 찾을 수 있으며, 호스트들도 경쟁력을 높이기 위한 전략을 수립할 수 있습니다.**  
@@ -186,27 +186,6 @@ airbnb_df = pd.read_csv('./data/Airbnb_Open_Data.csv',low_memory=False)
     review rate number
     availability 365
     ```
-# 데이터 시각화를 통한 탐색
-
-## 숙소 선호 상관 관계 히트맵
-<figure style="display: flex; justify-content: center; gap: 20px; text-align: center; flex-wrap: wrap;">
-  <div style="flex: 1; max-width: 50%;">
-    <img src="./images/숙소%20선호도%20상관%20관계.png" style="width: 100%; height: auto;">
-    <figcaption>숙소 선호 상관 관계</figcaption>
-  </div>
-
-  <div style="flex: 1; max-width: 50%;">
-    <img src="./images/예약에%20영향을%20주는%20상관관계.png" style="width: 100%; height: auto;">
-    <figcaption>예약에 영향을 주는 상관관계</figcaption>
-  </div>
-</figure>
-
-
-<figure  style="text-align: center;">
-<img src="./images/가격과%20리뷰%20수의%20관계.png">
-<figcaption>가격과 리뷰 수의 관계 산점도</figcaption>
-</figure>
-
 
 
 ## 데이터 정제 및 전처리
@@ -293,6 +272,27 @@ airbnb_df['room type'] = le_room_type.fit_transform(airbnb_df['room type'])
 airbnb_df['cancellation_policy'] = 2 - airbnb_df['cancellation_policy']
 
 ```
+
+# 데이터 시각화를 통한 탐색
+
+## 숙소 선호 상관 관계 히트맵
+<figure style="display: flex; justify-content: center; gap: 20px; text-align: center; flex-wrap: wrap;">
+  <div style="flex: 1; max-width: 50%;">
+    <img src="./images/숙소%20선호도%20상관%20관계.png" style="width: 100%; height: auto;">
+    <figcaption>숙소 선호 상관 관계</figcaption>
+  </div>
+
+  <div style="flex: 1; max-width: 50%;">
+    <img src="./images/예약에%20영향을%20주는%20상관관계.png" style="width: 100%; height: auto;">
+    <figcaption>예약에 영향을 주는 상관관계</figcaption>
+  </div>
+</figure>
+
+
+<figure  style="text-align: center;">
+<img src="./images/가격과%20리뷰%20수의%20관계.png">
+<figcaption>가격과 리뷰 수의 관계 산점도</figcaption>
+</figure>
 
 
 # 📌 에어비앤비 데이터 분석 결론
