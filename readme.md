@@ -162,51 +162,68 @@ airbnb_df = pd.read_csv('./data/Airbnb_Open_Data.csv',low_memory=False)
     review rate number
     availability 365
     ```
-## 데이터시각화를 통한 탐색
-- 숙소 선호 상관 관계 히트맵
-![](./images/숙소%20선호도%20상관%20관계.png)
+# 데이터 시각화를 통한 탐색
 
-- 예약에 영향을 주는 상관관계
-![](./images/예약에%20영향을%20주는%20상관관계.png)
+## 숙소 선호 상관 관계 히트맵
+**숙소 선호 상관 관계 & 예약에 영향을 주는 상관관계**  
+<img src="./images/숙소%20선호도%20상관%20관계.png" width="450">  
+<img src="./images/예약에%20영향을%20주는%20상관관계.png" width="450">  
 
-- 룸타입별 가격과 리뷰 수의 관계 산점도 
-![](./images/가격과%20리뷰%20수의%20관계.png)
+---
 
-- 전체 지역의 리뷰 막대 그래프프
-![](./images/도시별%20평균%20리뷰%20수.png)
+## 룸타입별 가격과 리뷰 수의 관계  
+**가격과 리뷰 수의 관계 산점도**  
+![](./images/가격과%20리뷰%20수의%20관계.png)  
 
-- 상위 10개 주의 리뷰 수
-![](./images/카운티%20별%20평균%20리뷰%20수.png)
+---
 
-- 도시별 리뷰 수
-![](./images/도시별%20리뷰%20수.png)
+## 리뷰 분석  
+### 전체 지역의 리뷰 수  
+**도시별 평균 리뷰 수 & 카운티별 평균 리뷰 수**  
+<img src="./images/도시별%20평균%20리뷰%20수.png" width="350" height="300">  <img src="./images/카운티%20별%20평균%20리뷰%20수.png" width="350" height="300">  
 
-- 건축년도와의 데이터 상관관계
-![](./images/건축%20년도에%20따른%20(평균%20가격,%20예약율,%20리뷰수).png)
+**도시별 리뷰 수**  
+![](./images/도시별%20리뷰%20수.png)  
 
-- 숙박 타입별 최소 숙박 일수
-![](./images/숙소%20타입별%20최소%20숙박%20일수.png)
+---
 
-- 숙소 종류별 예약율에 따른 평균 가격
-![](./images/숙소%20종류별%20예약율에%20따른%20평균%20가격.png)
+## 건축년도와 데이터 상관관계  
+**건축년도에 따른 평균 가격, 예약율, 리뷰수**  
+![](./images/건축%20년도에%20따른%20(평균%20가격,%20예약율,%20리뷰수).png)  
 
+---
 
-- 지역 및 객실 유형별 평균 가격 히트맵
-![](./images/평점별%20예약율에%20따른%20평균%20가격.png)
+## 숙박 관련 지표  
+### 숙박 타입별 최소 숙박 일수  
+![](./images/숙소%20타입별%20최소%20숙박%20일수.png)  
 
+### 숙소 종류별 예약율에 따른 평균 가격  
+![](./images/숙소%20종류별%20예약율에%20따른%20평균%20가격.png)  
 
-- 지역구와 숙소 타입에 따른 평균 가격 히트맵
-![](./images/지역구와%20숙소%20타입에%20따른%20평균%20가격%20히트맵.png)
+---
 
-- 지역별 건축년도 건물 분포 그래프
-![](./images/건축년도별%20건물%20수.png)
+## 가격 분석  
+### 지역 및 객실 유형별 평균 가격 히트맵  
+![](./images/평점별%20예약율에%20따른%20평균%20가격.png)  
 
-- 지역구와 숙소 타입에 따른 평균 가격 히트맵(Staten Island 제거)
-![](./images/지역구와%20숙소%20타입에%20따른%20평균%20가격%20히트맵%20지역%20이상치%20제거.png)
+### 지역구와 숙소 타입에 따른 평균 가격 히트맵  
+![](./images/지역구와%20숙소%20타입에%20따른%20평균%20가격%20히트맵.png)  
 
+---
 
-- 숙소 유형별 갯수
-![](./images/숙소%20유형별%20선호도%20파악_숙소개수.png)
+## 건축년도와 지역별 건물 분포  
+**건축년도별 건물 수**  
+![](./images/건축년도별%20건물%20수.png)  
+
+**Staten Island 제거 후 지역구 & 숙소 타입별 평균 가격 히트맵**  
+![](./images/지역구와%20숙소%20타입에%20따른%20평균%20가격%20히트맵%20지역%20이상치%20제거.png)  
+
+---
+
+## 숙소 유형별 분석  
+### 숙소 유형별 개수  
+![](./images/숙소%20유형별%20선호도%20파악_숙소개수.png)  
+
 
 
 ## 데이터 정제 및 전처리
@@ -266,12 +283,12 @@ airbnb_df = fillna(airbnb_df,['minimum nights','availability 365'],1)
 airbnb_df = fillna(airbnb_df,['service fee','number of reviews','review rate number'])
 airbnb_df = fillna(airbnb_df,['reviews per month'],airbnb_df['review rate number']/12)
 airbnb_df = dropna(airbnb_df,['Construction year','neighbourhood group','cancellation_policy'])
-
+# 이상치 제거
 airbnb_df = cleaned_data(airbnb_df,['price'],[50,1000],'between')
 airbnb_df = cleaned_data(airbnb_df,['availability 365'],[100,365],'between')
 airbnb_df = cleaned_data(airbnb_df,['number of reviews'],100,'over')
 airbnb_df = cleaned_data(airbnb_df,['minimum nights'],0,'under')
-
+# 타입 변화
 airbnb_df = change_type(airbnb_df,['availability 365','number of reviews','Construction year','price','service fee'],int)
 airbnb_df['availability 365'] = round((365 - airbnb_df['availability 365']) / 365, 2)
 airbnb_df['price'] = airbnb_df['price'] * 1400
