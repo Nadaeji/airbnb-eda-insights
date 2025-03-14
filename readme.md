@@ -278,6 +278,12 @@ airbnb_df['cancellation_policy'] = 2 - airbnb_df['cancellation_policy']
 
 ```
 
+# 결측치 제거 확인
+<figure  style="text-align: center;">
+<img src="./images/결측치%20제거%20및%20치환.png">
+<figcaption>가격과 리뷰 수의 관계 산점도</figcaption>
+</figure>
+
 # 데이터 시각화를 통한 탐색
 
 ## 숙소 선호 상관 관계 히트맵
