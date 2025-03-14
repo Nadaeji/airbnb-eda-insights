@@ -5,7 +5,7 @@
 
 | 이현대 | 신진슬 | 전유빈 | 나지윤 |
 |--------|--------|--------|-------|
-| <img src="./images/01.jpg" width="150" height="150"> | <img src="./images/02.jpg" width="150" height="150"> | <img src="./images/03.jpeg" width="150" height="150"> | <img src="./images/04.jpg" width="150" height="150"> |
+| <img src="./images/01.jpg" width="180" height="180"> | <img src="./images/02.jpg" width="180" height="180"> | <img src="./images/03.jpeg" width="180" height="180"> | <img src="./images/04.jpg" width="180" height="180"> |
 
 </div>
 
