@@ -98,23 +98,35 @@
 
 # EDA 절차
 
-1. **데이터 로드** 
+##  **데이터 로드** 
 ```
 airbnb_df = pd.read_csv('./data/Airbnb_Open_Data.csv',low_memory=False)
 ```
 
 ## 데이터 구조 기초 통계 확인
 - 데이터 프레임 정보
-![](/images/데이터프레임info.png)
+<figure  style="text-align: center;">
+<img src="./images/데이터프레임info.png">
+<figcaption>데이터 프레임 정보</figcaption>
+</figure>
+
 - 기본 통계 정보
-![](/images/이상치확인데이터.png)
+<figure  style="text-align: center;">
+<img src="./images/이상치확인데이터.png">
+<figcaption>이상치 확인 데이터</figcaption>
+</figure>
+
 
 ## 결측치 및 이상치 탐색
 
     
 1. **결측치 탐색**
 
-![결측치 탐색](./images/결측치%20탐색.png)
+<figure  style="text-align: center;">
+<img src="./images/결측치%20탐색.png">
+<figcaption>결측치 탐색</figcaption>
+</figure>
+
 1. **불필요한 column 제거**
     ```
         host_name
@@ -165,89 +177,47 @@ airbnb_df = pd.read_csv('./data/Airbnb_Open_Data.csv',low_memory=False)
 # 데이터 시각화를 통한 탐색
 
 ## 숙소 선호 상관 관계 히트맵
-**숙소 선호 상관 관계 & 예약에 영향을 주는 상관관계**  
-<img src="./images/숙소%20선호도%20상관%20관계.png" width="450">  
-<img src="./images/예약에%20영향을%20주는%20상관관계.png" width="450">  
+<figure  style="text-align: center; display:flex; justify-content:space-between;">
+<div>
+<img src="./images/숙소%20선호도%20상관%20관계.png" width="350" height="300">
+<figcaption>숙소 선호 상관 관계</figcaption>
+</div>
 
----
+<div>
+<img src="./images/예약에%20영향을%20주는%20상관관계.png" width="350" height="300">
+<figcaption>예약에 영향을 주는 상관관계</figcaption>
+</div>
+</figure>
 
-## 룸타입별 가격과 리뷰 수의 관계  
-**가격과 리뷰 수의 관계 산점도**  
-![](./images/가격과%20리뷰%20수의%20관계.png)  
-
----
-
-## 리뷰 분석  
-### 전체 지역의 리뷰 수  
-**도시별 평균 리뷰 수 & 카운티별 평균 리뷰 수**  
-<img src="./images/도시별%20평균%20리뷰%20수.png" width="350" height="300">  <img src="./images/카운티%20별%20평균%20리뷰%20수.png" width="350" height="300">  
-
-**도시별 리뷰 수**  
-![](./images/도시별%20리뷰%20수.png)  
-
----
-
-## 건축년도와 데이터 상관관계  
-**건축년도에 따른 평균 가격, 예약율, 리뷰수**  
-![](./images/건축%20년도에%20따른%20(평균%20가격,%20예약율,%20리뷰수).png)  
-
----
-
-## 숙박 관련 지표  
-### 숙박 타입별 최소 숙박 일수  
-![](./images/숙소%20타입별%20최소%20숙박%20일수.png)  
-
-### 숙소 종류별 예약율에 따른 평균 가격  
-![](./images/숙소%20종류별%20예약율에%20따른%20평균%20가격.png)  
-
----
-
-## 가격 분석  
-### 지역 및 객실 유형별 평균 가격 히트맵  
-![](./images/평점별%20예약율에%20따른%20평균%20가격.png)  
-
-### 지역구와 숙소 타입에 따른 평균 가격 히트맵  
-![](./images/지역구와%20숙소%20타입에%20따른%20평균%20가격%20히트맵.png)  
-
----
-
-## 건축년도와 지역별 건물 분포  
-**건축년도별 건물 수**  
-![](./images/건축년도별%20건물%20수.png)  
-
-**Staten Island 제거 후 지역구 & 숙소 타입별 평균 가격 히트맵**  
-![](./images/지역구와%20숙소%20타입에%20따른%20평균%20가격%20히트맵%20지역%20이상치%20제거.png)  
-
----
-
-## 숙소 유형별 분석  
-### 숙소 유형별 개수  
-![](./images/숙소%20유형별%20선호도%20파악_숙소개수.png)  
+<figure  style="text-align: center;">
+<img src="./images/가격과%20리뷰%20수의%20관계.png">
+<figcaption>가격과 리뷰 수의 관계 산점도</figcaption>
+</figure>
 
 
 
 ## 데이터 정제 및 전처리
-### 결측치 치환
+### • 결측치 치환
 ```python
 def fillna(df,columns,default=0):
     for column in columns:
         df[column] = df[column].fillna(default)
     return df
 ```
-### 결측치 제거
+### • 결측치 제거
 ```python
 def dropna(df,column_list):
     df = df.dropna(subset=column_list,axis=0)
     return df
 ```
-### 데이터 타입 변환
+### • 데이터 타입 변환
 ```python
 def change_type(df,columns,type):
     for column in columns:
         df[column] = df[column].astype(type)
     return df
 ```
-### 이상치 제거
+### • 이상치 제거
 ```python
 def cleaned_data(df: pd.DataFrame, columns: List[str], value: Union[int, float, List[Union[int, float]]], compare_type: str) -> pd.DataFrame:
     if not columns:
@@ -273,7 +243,7 @@ def cleaned_data(df: pd.DataFrame, columns: List[str], value: Union[int, float, 
         raise ValueError(f"Invalid compare_type: {compare_type}. Use 'over', 'under', or 'between'")
     return df
 ```
-
+### • 함수 활용
 ```python
 # room type 별 평균 가격 계산
 room_type_avg_price = airbnb_df.groupby('room type')['price'].mean()
@@ -295,7 +265,7 @@ airbnb_df['price'] = airbnb_df['price'] * 1400
 airbnb_df['service fee'] = airbnb_df['service fee'] *1400
 ```
 
-
+### • 라벨 인코딩
 ```python
 # Label Encoder 초기화
 le_neighbourhood = LabelEncoder()
@@ -312,29 +282,95 @@ airbnb_df['cancellation_policy'] = 2 - airbnb_df['cancellation_policy']
 ```
 
 
-# 결론
+# 📌 에어비앤비 데이터 분석 결론
 
 우리가 도출하고자 하는 인사이트에 대하여 다음과 같은 결과를 얻을 수 있습니다. 
 
-# 📌 에어비앤비 데이터 분석 결과
+
 
 ## 소비자의 입장에서 숙소 예약에 참고할 수 있는 인사이트
 
-- **도시별 평균 리뷰 수를 확인한 결과**, 숙박 후기를 보고 숙소를 선택하는 경우 **Shared room(게스트하우스)**를 제외한 나머지 숙소 유형을 선택하는 것이 좋습니다.
+
 - **단기 숙박**의 경우, 일반적으로 **Hotel**을 선택하는 것이 유리합니다.  
   - 일부 숙소는 **최소 숙박일 수 제한 정책**을 운영하여, 일정 박수(n박 이상) 이하로는 예약이 불가능할 수 있습니다.
+
+<figure  style="text-align: center;">
+<img src="./images/숙소%20타입별%20최소%20숙박%20일수.png">
+<figcaption>숙박 타입별 최소 숙박 일수</figcaption>
+</figure>
+
+- **도시별 평균 리뷰 수를 확인한 결과**, 숙박 후기를 보고 숙소를 선택하는 경우 **Shared room(게스트하우스)**를 제외한 나머지 숙소 유형을 선택하는 것이 좋습니다.
+
+<figure  style="text-align: center; display:flex; justify-content:space-between;">
+<div>
+<img src="./images/도시별%20평균%20리뷰%20수.png" width="350" height="300">
+<figcaption>도시별 평균 리뷰 </figcaption>
+</div>
+
+<div>
+<img src="./images/카운티%20별%20평균%20리뷰%20수.png" width="350" height="300">
+<figcaption>카운티별 평균 리뷰 수</figcaption>
+</div>
+</figure>
+
+<figure  style="text-align: center;">
+<img src="./images/도시별%20리뷰%20수.png" alt="샘플 이미지">
+ <figcaption>도시별 리뷰 수</figcaption>
+</figure>
+
+
+
+<figure  style="text-align: center;">
+<img src="./images/숙소%20유형별%20선호도%20파악_숙소개수.png" alt="샘플 이미지">
+ <figcaption>숙소 유형별 개수</figcaption>
+</figure>
+
 - **건축 연도와 예약률 및 평균 가격 간의 상관관계는 확인되지 않았습니다.**  
   - 이는 **주기적인 리모델링**을 통해 숙박업소가 지속적으로 관리되기 때문으로 추정됩니다.
+<figure  style="text-align: center;">
+<img src="./images/건축%20년도에%20따른%20(평균%20가격,%20예약율,%20리뷰수).png" alt="샘플 이미지">
+ <figcaption>건축년도에 따른 평균 가격, 예약율, 리뷰수</figcaption>
+</figure>
 
+
+<figure  style="text-align: center;">
+<img src="./images/건축년도별%20건물%20수.png" alt="샘플 이미지">
+ <figcaption>건축년도별 건물 수</figcaption>
+</figure>
 
 ## 지역 및 숙소 유형별 평균 가격 분석
 
 - **도시별 숙소 타입별 평균 가격 히트맵**을 통해, **어떤 지역에서 더 저렴하게 숙박할 수 있는지 비교 가능**합니다.
 
+<figure  style="text-align: center;">
+<img src="./images/평점별%20예약율에%20따른%20평균%20가격.png" alt="샘플 이미지">
+ <figcaption>지역 및 객실 유형별 평균 가격 히트맵</figcaption>
+</figure>
+
+
+
+<figure  style="text-align: center;">
+<img src="./images/지역구와%20숙소%20타입에%20따른%20평균%20가격%20히트맵.png" alt="샘플 이미지">
+ <figcaption>지역구와 숙소 타입에 따른 평균 가격 히트맵</figcaption>
+</figure>
+
+<figure  style="text-align: center;">
+<img src="./images/지역구와%20숙소%20타입에%20따른%20평균%20가격%20히트맵%20지역%20이상치%20제거.png" alt="샘플 이미지">
+ <figcaption>Staten Island 제거 후 지역구 & 숙소 타입별 평균 가격 히트맵</figcaption>
+</figure>
+
+
 
 ##  평점과 예약률 간의 상관관계 분석
 
+
 - 시각화 데이터를 통해서는 **평점과 예약률 간의 뚜렷한 상관관계를 확인할 수 없었습니다.**
+
+
+<figure  style="text-align: center;">
+<img src="./images/숙소%20종류별%20예약율에%20따른%20평균%20가격.png" alt="샘플 이미지">
+ <figcaption>숙소 종류별 예약율에 따른 평균 가격</figcaption>
+</figure>
 
 
 ## 숙소 선호도 분석 및 예약에 영향을 주는 요소
@@ -356,3 +392,6 @@ airbnb_df['cancellation_policy'] = 2 - airbnb_df['cancellation_policy']
 
 > 🔗 **[에어비앤비 Open Data 컬럼 설명](https://docs.google.com/spreadsheets/d/1iWCNJcSutYqpULSQHlNyGInUvHg2BoUGoNRIGa6Szc4/edit?gid=1322284596#gid=1322284596)**  
 > 해당 문서에서 `availability_365` 컬럼의 정의를 확인할 수 있습니다.
+
+<iframe width="560" height="315" src="https://www.youtube.com/watch?v=bWoW2wectB0#:~:text=%EC%98%A4%EB%8A%98%EC%9D%80%20%EB%8B%89%EA%B0%92%ED%95%98%EB%9F%AC%20%EC%8B%9C%EA%B7%B8%EB%8B%88%EC%97%98%EC%97%90%20%EB%8B%A4%EB%85%80%EC%99%94%EC%8A%B5%EB%8B%88%EB%8B%A4.%208%EB%A7%8C%EC%9B%90%EC%97%90%20%EC%98%88%EC%95%BD%ED%95%98%EA%B3%A0%2C%20%EC%8B%9C%EA%B7%B8%EB%8B%88%EC%97%98%EB%A1%9C,%EC%B7%A8%EC%86%8C%ED%95%B4%EC%A3%BC%EC%A7%80%20%EC%95%8A%EB%8A%94%20%EC%86%8C%EC%8B%AC%ED%95%9C%20%EB%B3%B5%EC%88%98%20%EB%82%98%EB%8F%84%20%EC%84%A0%EC%83%9D%EB%8B%98%EB%93%A4%20%EC%8B%A4%EC%88%98%EB%A5%BC" frameborder="0" allowfullscreen></iframe>
+
