@@ -16,7 +16,7 @@
 ##  주제 선정 이유
 
 <figure  style="text-align: center;">
-<img src="./images/여행%20선택시%20고려도%20조사">
+<img src="./images/여행%20선택시%20고려도%20조사.jpg">
 <figcaption>가격과 리뷰 수의 관계 산점도</figcaption>
 </figure>
 
