@@ -14,10 +14,16 @@
 # 주제 : 🏡 에어비앤비 데이터 분석을 통해 최적의 숙소 선택 인사이트
 
 ##  주제 선정 이유
+### • 해외 관광객 추이
+<figure  style="text-align: center;">
+<img src="./images/국민%20해외%20관광객%20추이.png">
+<figcaption>가격과 리뷰 수의 관계 산점도</figcaption>
+</figure>
 
+### • 숙박 선택에 결정 장애를 격은 비율에 대한 설문
 <figure  style="text-align: center;">
 <img src="./images/여행%20선택시%20고려도%20조사.jpg">
-<figcaption>가격과 리뷰 수의 관계 산점도</figcaption>
+<figcaption>숙박 선택에 결정 장애를 격은 비율에 대한 설문</figcaption>
 </figure>
 
 
