@@ -15,7 +15,11 @@
 
 ##  주제 선정 이유
 
-![](https://www.traveldaily.co.kr/news/photo/202406/52838_53810_4952.jpg)
+<figure  style="text-align: center;">
+<img src="https://www.traveldaily.co.kr/news/photo/202406/52838_53810_4952.jpg">
+<figcaption>가격과 리뷰 수의 관계 산점도</figcaption>
+</figure>
+
 
 첨부된 기사에 따르면 많은 여행객들은 **가성비 좋은 숙소를 찾기 위해 리뷰와 가격을 꼼꼼히 비교**합니다.  
 그러나 방대한 숙소 정보 속에서 **어떤 숙소를 선택해야 할지 판단하는 것은 쉽지 않은 일**입니다.
