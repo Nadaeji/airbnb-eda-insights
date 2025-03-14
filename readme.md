@@ -324,7 +324,7 @@ airbnb_df['cancellation_policy'] = 2 - airbnb_df['cancellation_policy']
 
 
 
-<figure  style="display:felx; justify-content:center;">
+<figure  style="text-align: center;">
 <img src="./images/숙소%20유형별%20선호도%20파악_숙소개수.png" alt="샘플 이미지">
  <figcaption>숙소 유형별 개수</figcaption>
 </figure>
