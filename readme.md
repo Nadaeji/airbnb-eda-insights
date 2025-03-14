@@ -1,9 +1,14 @@
 # 팀명 : 똥강아지들의 우당탕당 숙소 데이터 분석
 
 # 🫡팀원 소개
+<div align="center">
+
 | 이현대 | 신진슬 | 전유빈 | 나지윤 |
 |--------|--------|--------|-------|
 | <img src="./images/01.jpg" width="150" height="150"> | <img src="./images/02.jpg" width="150" height="150"> | <img src="./images/03.jpeg" width="150" height="150"> | <img src="./images/04.jpg" width="150" height="150"> |
+
+</div>
+
 
 
 
