@@ -22,7 +22,7 @@
 ### • 해외 관광객 추이
 <figure  style="text-align: center;">
 <img src="./images/국민%20해외%20관광객%20추이.png">
-<figcaption>가격과 리뷰 수의 관계 산점도</figcaption>
+<figcaption>국민 해외 관광객 추이</figcaption>
 </figure>
 
 ### • 숙박 선택에 결정 장애를 격은 비율에 대한 설문
