@@ -16,7 +16,7 @@
 ##  주제 선정 이유
 
 <figure  style="text-align: center;">
-<img src="https://www.traveldaily.co.kr/news/photo/202406/52838_53810_4952.jpg">
+<img src="./images/여행%20선택시%20고려도%20조사">
 <figcaption>가격과 리뷰 수의 관계 산점도</figcaption>
 </figure>
 
@@ -306,7 +306,7 @@ airbnb_df['cancellation_policy'] = 2 - airbnb_df['cancellation_policy']
 <figcaption>숙박 타입별 최소 숙박 일수</figcaption>
 </figure>
 
-- **도시별 평균 리뷰 수를 확인한 결과**, 숙박 후기를 보고 숙소를 선택하는 경우 Shared **room(게스트하우스)를** 제외한 나머지 숙소 유형을 선택하는 것이 좋습니다.
+- **도시별 평균 리뷰 수를 확인한 결과**, 숙박 후기를 보고 숙소를 선택하는 경우 **Shared room(게스트하우스)를** 제외한 나머지 숙소 유형을 선택하는 것이 좋습니다.
 
 <figure style="display: flex; justify-content: center; gap: 20px; text-align: center; flex-wrap: wrap;">
   <div style="flex: 1; max-width: 50%;">
