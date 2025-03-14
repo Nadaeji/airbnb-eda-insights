@@ -177,17 +177,18 @@ airbnb_df = pd.read_csv('./data/Airbnb_Open_Data.csv',low_memory=False)
 # 데이터 시각화를 통한 탐색
 
 ## 숙소 선호 상관 관계 히트맵
-<figure  style="text-align: center; display:flex; justify-content:space-between;">
-<div>
-<img src="./images/숙소%20선호도%20상관%20관계.png" width="350" height="300">
-<figcaption>숙소 선호 상관 관계</figcaption>
-</div>
+<figure style="display: flex; justify-content: center; gap: 20px; text-align: center; flex-wrap: wrap;">
+  <div style="flex: 1; max-width: 50%;">
+    <img src="./images/숙소%20선호도%20상관%20관계.png" style="width: 100%; height: auto;">
+    <figcaption>숙소 선호 상관 관계</figcaption>
+  </div>
 
-<div>
-<img src="./images/예약에%20영향을%20주는%20상관관계.png" width="350" height="300">
-<figcaption>예약에 영향을 주는 상관관계</figcaption>
-</div>
+  <div style="flex: 1; max-width: 50%;">
+    <img src="./images/예약에%20영향을%20주는%20상관관계.png" style="width: 100%; height: auto;">
+    <figcaption>예약에 영향을 주는 상관관계</figcaption>
+  </div>
 </figure>
+
 
 <figure  style="text-align: center;">
 <img src="./images/가격과%20리뷰%20수의%20관계.png">
@@ -301,17 +302,18 @@ airbnb_df['cancellation_policy'] = 2 - airbnb_df['cancellation_policy']
 
 - **도시별 평균 리뷰 수를 확인한 결과**, 숙박 후기를 보고 숙소를 선택하는 경우 **Shared room(게스트하우스)**를 제외한 나머지 숙소 유형을 선택하는 것이 좋습니다.
 
-<figure  style="text-align: center; display:flex; justify-content:space-between;">
-<div>
-<img src="./images/도시별%20평균%20리뷰%20수.png" width="350" height="300">
-<figcaption>도시별 평균 리뷰 </figcaption>
-</div>
+<figure style="display: flex; justify-content: center; gap: 20px; text-align: center; flex-wrap: wrap;">
+  <div style="flex: 1; max-width: 50%;">
+    <img src="./images/도시별%20평균%20리뷰%20수.png" style="width: 100%; height: auto;">
+    <figcaption>도시별 평균 리뷰</figcaption>
+  </div>
 
-<div>
-<img src="./images/카운티%20별%20평균%20리뷰%20수.png" width="350" height="300">
-<figcaption>카운티별 평균 리뷰 수</figcaption>
-</div>
+  <div style="flex: 1; max-width: 50%;">
+    <img src="./images/카운티%20별%20평균%20리뷰%20수.png" style="width: 100%; height: auto;">
+    <figcaption>카운티별 평균 리뷰 수</figcaption>
+  </div>
 </figure>
+
 
 <figure  style="text-align: center;">
 <img src="./images/도시별%20리뷰%20수.png" alt="샘플 이미지">
@@ -393,5 +395,6 @@ airbnb_df['cancellation_policy'] = 2 - airbnb_df['cancellation_policy']
 > 🔗 **[에어비앤비 Open Data 컬럼 설명](https://docs.google.com/spreadsheets/d/1iWCNJcSutYqpULSQHlNyGInUvHg2BoUGoNRIGa6Szc4/edit?gid=1322284596#gid=1322284596)**  
 > 해당 문서에서 `availability_365` 컬럼의 정의를 확인할 수 있습니다.
 
-<iframe width="560" height="315" src="https://www.youtube.com/watch?v=bWoW2wectB0#:~:text=%EC%98%A4%EB%8A%98%EC%9D%80%20%EB%8B%89%EA%B0%92%ED%95%98%EB%9F%AC%20%EC%8B%9C%EA%B7%B8%EB%8B%88%EC%97%98%EC%97%90%20%EB%8B%A4%EB%85%80%EC%99%94%EC%8A%B5%EB%8B%88%EB%8B%A4.%208%EB%A7%8C%EC%9B%90%EC%97%90%20%EC%98%88%EC%95%BD%ED%95%98%EA%B3%A0%2C%20%EC%8B%9C%EA%B7%B8%EB%8B%88%EC%97%98%EB%A1%9C,%EC%B7%A8%EC%86%8C%ED%95%B4%EC%A3%BC%EC%A7%80%20%EC%95%8A%EB%8A%94%20%EC%86%8C%EC%8B%AC%ED%95%9C%20%EB%B3%B5%EC%88%98%20%EB%82%98%EB%8F%84%20%EC%84%A0%EC%83%9D%EB%8B%98%EB%93%A4%20%EC%8B%A4%EC%88%98%EB%A5%BC" frameborder="0" allowfullscreen></iframe>
+[![YouTube 영상](https://img.youtube.com/vi/bWoW2wectB0/0.jpg)](https://www.youtube.com/watch?v=bWoW2wectB0)
+
 
