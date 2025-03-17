@@ -16,7 +16,8 @@ def train_model(data):
     pivot_data = data.pivot(index='Date', columns='City', values='PM2.5 (µg/m³)').reset_index().fillna(0)
     X = pivot_data[['Beijing']]
     y = pivot_data[['Seoul', 'Tokyo', 'Delhi', 'Bangkok']]
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=3)
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3
+    , random_state=3)
     model = LinearRegression()
     model.fit(X_train, y_train)
     return model, X_test, y_test, pivot_data

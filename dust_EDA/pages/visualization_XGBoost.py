@@ -1,6 +1,6 @@
 import pandas as pd
 import streamlit as st
-from lightgbm import LGBMRegressor
+from xgboost import XGBRegressor
 from sklearn.model_selection import train_test_split, cross_val_score
 from sklearn.cluster import DBSCAN
 import plotly.express as px
@@ -14,7 +14,7 @@ def load_data():
     data['Month'] = data['Date'].dt.month  # 월 추가
     return data
 
-# DBSCAN + LightGBM 모델 학습 (도시별 모델)
+# DBSCAN + XGBoost 모델 학습 (도시별 모델)
 def train_model(data):
     pivot_data = data.pivot(index='Date', columns='City', values='PM2.5 (µg/m³)').reset_index().fillna(0)
     pivot_data['Month'] = data.groupby('Date')['Month'].first().values
@@ -43,7 +43,7 @@ def train_model(data):
                 y_cluster = cluster_data[city]  # 단일 열 타겟
                 if len(X_cluster) > 5:
                     X_train, X_test, y_train, y_test = train_test_split(X_cluster, y_cluster, test_size=0.2, random_state=42)
-                    model = LGBMRegressor(n_estimators=200, random_state=42, learning_rate=0.05)
+                    model = XGBRegressor(n_estimators=200, learning_rate=0.05, max_depth=3, random_state=42, objective='reg:squarederror')
                     model.fit(X_train, y_train)
                     models[cluster][city] = model
                     X_tests[cluster][city] = X_test
@@ -105,7 +105,7 @@ city_coords = {
 }
 
 # Streamlit 앱
-st.title("Beijing PM2.5 기반 도시별 미세먼지 예측 및 시간별 지도 (DBSCAN + LightGBM)")
+st.title("Beijing PM2.5 기반 도시별 미세먼지 예측 및 시간별 지도 (DBSCAN + XGBoost)")
 
 # 데이터 로드
 data = load_data()
@@ -168,7 +168,7 @@ with tab1:
         st.plotly_chart(fig)
 
 # 탭 2: 시간별 데이터 지도 (슬라이더로 날짜 변경)
-with tab1:
+with tab2:
     st.subheader("시간별 미세먼지 농도 지도")
     
     # 날짜 슬라이더
