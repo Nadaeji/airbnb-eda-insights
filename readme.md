@@ -5,7 +5,7 @@
 
 | 이현대 | 신진슬 | 전유빈 | 나지윤 |
 |--------|--------|--------|-------|
-| <img src="./images/01.jpg" width="180" height="180"> | <img src="./images/02.jpg" width="180" height="180"> | <img src="./images/03.jpeg" width="180" height="180"> | <img src="./images/04.jpg" width="180" height="180"> |
+| <img src="./img/01.jpg" width="180" height="180"> | <img src="./img/02.jpg" width="180" height="180"> | <img src="./img/03.jpeg" width="180" height="180"> | <img src="./img/04.jpg" width="180" height="180"> |
 
 </div>
 
@@ -21,13 +21,13 @@
 ##  주제 선정 이유
 ### • 해외 관광객 추이
 <figure  style="text-align: center;">
-<img src="./images/국민%20해외%20관광객%20추이.png">
+<img src="./img/국민%20해외%20관광객%20추이.png">
 <figcaption>국민 해외 관광객 추이</figcaption>
 </figure>
 
 ### • 숙박 선택에 결정 장애를 격은 비율에 대한 설문
 <figure  style="text-align: center;">
-<img src="./images/여행%20선택시%20고려도%20조사.jpg">
+<img src="./img/여행%20선택시%20고려도%20조사.jpg">
 <figcaption>숙박 선택에 결정 장애를 격은 비율에 대한 설문</figcaption>
 </figure>
 
@@ -47,7 +47,7 @@
 
 ## 📂 분석에 사용한 데이터셋
 
-![NewYork Airbnb](/images/nyairbnb.jpg)
+![NewYork Airbnb](/img/nyairbnb.jpg)
 
 **데이터 출처:** [뉴욕 에어비앤비 Open Data](https://www.kaggle.com/datasets/arianazmoudeh/airbnbopendata)  
 **데이터 내용:** 뉴욕의 에어비앤비 숙소 정보, 가격, 리뷰 수, 예약 가능 일수 등
@@ -123,13 +123,13 @@ airbnb_df = pd.read_csv('./data/Airbnb_Open_Data.csv',low_memory=False)
 ## 데이터 구조 기초 통계 확인
 - 데이터 프레임 정보
 <figure  style="text-align: center;">
-<img src="./images/데이터프레임info.png">
+<img src="./img/데이터프레임info.png">
 <figcaption>데이터 프레임 정보</figcaption>
 </figure>
 
 - 기본 통계 정보
 <figure  style="text-align: center;">
-<img src="./images/이상치확인데이터.png">
+<img src="./img/이상치확인데이터.png">
 <figcaption>이상치 확인 데이터</figcaption>
 </figure>
 
@@ -140,7 +140,7 @@ airbnb_df = pd.read_csv('./data/Airbnb_Open_Data.csv',low_memory=False)
 1. **결측치 탐색**
 
 <figure  style="text-align: center;">
-<img src="./images/결측치%20탐색.png">
+<img src="./img/결측치%20탐색.png">
 <figcaption>결측치 탐색</figcaption>
 </figure>
 
@@ -280,7 +280,7 @@ airbnb_df['cancellation_policy'] = 2 - airbnb_df['cancellation_policy']
 
 # 결측치 제거 확인
 <figure  style="text-align: center;">
-<img src="./images/결측치%20제거%20및%20치환.png">
+<img src="./img/결측치%20제거%20및%20치환.png">
 <figcaption>가격과 리뷰 수의 관계 산점도</figcaption>
 </figure>
 
@@ -289,19 +289,19 @@ airbnb_df['cancellation_policy'] = 2 - airbnb_df['cancellation_policy']
 ## 숙소 선호 상관 관계 히트맵
 <figure style="display: flex; justify-content: center; gap: 20px; text-align: center; flex-wrap: wrap;">
   <div style="flex: 1; max-width: 50%;">
-    <img src="./images/숙소%20선호도%20상관%20관계.png" style="width: 100%; height: auto;">
+    <img src="./img/숙소%20선호도%20상관%20관계.png" style="width: 100%; height: auto;">
     <figcaption>숙소 선호 상관 관계</figcaption>
   </div>
 
   <div style="flex: 1; max-width: 50%;">
-    <img src="./images/예약에%20영향을%20주는%20상관관계.png" style="width: 100%; height: auto;">
+    <img src="./img/예약에%20영향을%20주는%20상관관계.png" style="width: 100%; height: auto;">
     <figcaption>예약에 영향을 주는 상관관계</figcaption>
   </div>
 </figure>
 
 
 <figure  style="text-align: center;">
-<img src="./images/가격과%20리뷰%20수의%20관계.png">
+<img src="./img/가격과%20리뷰%20수의%20관계.png">
 <figcaption>가격과 리뷰 수의 관계 산점도</figcaption>
 </figure>
 
@@ -319,7 +319,7 @@ airbnb_df['cancellation_policy'] = 2 - airbnb_df['cancellation_policy']
   - 일부 숙소는 **최소 숙박일 수 제한 정책**을 운영하여, 일정 박수(n박 이상) 이하로는 예약이 불가능할 수 있습니다.
 
 <figure  style="text-align: center;">
-<img src="./images/숙소%20타입별%20최소%20숙박%20일수.png">
+<img src="./img/숙소%20타입별%20최소%20숙박%20일수.png">
 <figcaption>숙박 타입별 최소 숙박 일수</figcaption>
 </figure>
 
@@ -327,39 +327,39 @@ airbnb_df['cancellation_policy'] = 2 - airbnb_df['cancellation_policy']
 
 <figure style="display: flex; justify-content: center; gap: 20px; text-align: center; flex-wrap: wrap;">
   <div style="flex: 1; max-width: 50%;">
-    <img src="./images/도시별%20평균%20리뷰%20수.png" style="width: 100%; height: auto;">
+    <img src="./img/도시별%20평균%20리뷰%20수.png" style="width: 100%; height: auto;">
     <figcaption>도시별 평균 리뷰</figcaption>
   </div>
 
   <div style="flex: 1; max-width: 50%;">
-    <img src="./images/카운티%20별%20평균%20리뷰%20수.png" style="width: 100%; height: auto;">
+    <img src="./img/카운티%20별%20평균%20리뷰%20수.png" style="width: 100%; height: auto;">
     <figcaption>카운티별 평균 리뷰 수</figcaption>
   </div>
 </figure>
 
 
 <figure  style="text-align: center;">
-<img src="./images/도시별%20리뷰%20수.png" alt="샘플 이미지">
+<img src="./img/도시별%20리뷰%20수.png" alt="샘플 이미지">
  <figcaption>도시별 리뷰 수</figcaption>
 </figure>
 
 
 
 <figure  style="text-align: center;">
-<img src="./images/숙소%20유형별%20선호도%20파악_숙소개수.png" alt="샘플 이미지">
+<img src="./img/숙소%20유형별%20선호도%20파악_숙소개수.png" alt="샘플 이미지">
  <figcaption>숙소 유형별 개수</figcaption>
 </figure>
 
 - **건축 연도와 예약률 및 평균 가격 간의 상관관계는 확인되지 않았습니다.**  
   - 이는 **주기적인 리모델링**을 통해 숙박업소가 지속적으로 관리되기 때문으로 추정됩니다.
 <figure  style="text-align: center;">
-<img src="./images/건축%20년도에%20따른%20(평균%20가격,%20예약율,%20리뷰수).png" alt="샘플 이미지">
+<img src="./img/건축%20년도에%20따른%20(평균%20가격,%20예약율,%20리뷰수).png" alt="샘플 이미지">
  <figcaption>건축년도에 따른 평균 가격, 예약율, 리뷰수</figcaption>
 </figure>
 
 
 <figure  style="text-align: center;">
-<img src="./images/건축년도별%20건물%20수.png" alt="샘플 이미지">
+<img src="./img/건축년도별%20건물%20수.png" alt="샘플 이미지">
  <figcaption>건축년도별 건물 수</figcaption>
 </figure>
 
@@ -368,19 +368,19 @@ airbnb_df['cancellation_policy'] = 2 - airbnb_df['cancellation_policy']
 - **도시별 숙소 타입별 평균 가격 히트맵**을 통해, **어떤 지역에서 더 저렴하게 숙박할 수 있는지 비교 가능**합니다.
 
 <figure  style="text-align: center;">
-<img src="./images/평점별%20예약율에%20따른%20평균%20가격.png" alt="샘플 이미지">
+<img src="./img/평점별%20예약율에%20따른%20평균%20가격.png" alt="샘플 이미지">
  <figcaption>지역 및 객실 유형별 평균 가격 히트맵</figcaption>
 </figure>
 
 
 
 <figure  style="text-align: center;">
-<img src="./images/지역구와%20숙소%20타입에%20따른%20평균%20가격%20히트맵.png" alt="샘플 이미지">
+<img src="./img/지역구와%20숙소%20타입에%20따른%20평균%20가격%20히트맵.png" alt="샘플 이미지">
  <figcaption>지역구와 숙소 타입에 따른 평균 가격 히트맵</figcaption>
 </figure>
 
 <figure  style="text-align: center;">
-<img src="./images/지역구와%20숙소%20타입에%20따른%20평균%20가격%20히트맵%20지역%20이상치%20제거.png" alt="샘플 이미지">
+<img src="./img/지역구와%20숙소%20타입에%20따른%20평균%20가격%20히트맵%20지역%20이상치%20제거.png" alt="샘플 이미지">
  <figcaption>Staten Island 제거 후 지역구 & 숙소 타입별 평균 가격 히트맵</figcaption>
 </figure>
 
@@ -393,7 +393,7 @@ airbnb_df['cancellation_policy'] = 2 - airbnb_df['cancellation_policy']
 
 
 <figure  style="text-align: center;">
-<img src="./images/숙소%20종류별%20예약율에%20따른%20평균%20가격.png" alt="샘플 이미지">
+<img src="./img/숙소%20종류별%20예약율에%20따른%20평균%20가격.png" alt="샘플 이미지">
  <figcaption>숙소 종류별 예약율에 따른 평균 가격</figcaption>
 </figure>
 
