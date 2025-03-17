@@ -1,4 +1,4 @@
-# 팀명 : 똥강아지들의 우당탕탕 숙소 데이터 분석
+# 팀명 : 똥강아지들의 미세먼지 분석기
 
 # 🫡팀원 소개
 <div align="center">
@@ -11,51 +11,42 @@
 
 
 
-
-
 # 📅 개발기간
-2025.03.10 ~ 2025.03.13 (4일)
+2025.03.17 ~ 2025.03.20 (4일)
 
-# 주제 : 🏡 에어비앤비 데이터 분석을 통해 최적의 숙소 선택 인사이트
+# 주제 : 중국발 미세먼지가 주변국에 미치는 영향 분석
 
 ##  주제 선정 이유
-### • 해외 관광객 추이
+
 <figure  style="text-align: center;">
-<img src="./img/국민%20해외%20관광객%20추이.png">
-<figcaption>국민 해외 관광객 추이</figcaption>
+<img src="./img/미세먼지사진.jpg">
+<figcaption>데이터 프레임 정보</figcaption>
 </figure>
-
-### • 숙박 선택에 결정 장애를 격은 비율에 대한 설문
-<figure  style="text-align: center;">
-<img src="./img/여행%20선택시%20고려도%20조사.jpg">
-<figcaption>숙박 선택에 결정 장애를 격은 비율에 대한 설문</figcaption>
-</figure>
-
-
-첨부된 기사에 따르면 많은 여행객들은 **가성비 좋은 숙소를 찾기 위해 리뷰와 가격을 꼼꼼히 비교**합니다.  
-그러나 방대한 숙소 정보 속에서 **어떤 숙소를 선택해야 할지 판단하는 것은 쉽지 않은 일**입니다.
-따라서 우리가 얻을 수 있는 데이터중 뉴욕주의 숙박 데이터를 통해 인사이트를 연역적 접근 (Deductive Approach)을 통해 도출해 보고자 합니다.
-
-📊 **데이터를 활용하면 객관적인 기준으로 최적의 숙소를 선택할 수 있습니다.**  
-이를 통해 **소비자는 자신의 요구와 예산에 맞는 숙소를 쉽게 찾을 수 있으며, 호스트들도 경쟁력을 높이기 위한 전략을 수립할 수 있습니다.**  
 
 🔗 관련 기사:
-- [가성비 럭셔리 여행 기사](https://www.traveldaily.co.kr/news/articleView.html?idxno=52838)
-- [가성비 여행 가이드 기사](https://www.sukbakmagazine.com/news/articleView.html?idxno=61073)
+- [중국발 미세먼지 및 몽골발 황사 영향](https://www.chosun.com/national/transport-environment/2025/03/12/NISU7VVNRRGXZFIE27QK4C6MK4/)
+- [ㄴ](https://www.sukbakmagazine.com/news/articleView.html?idxno=61073)
+
+
+| 등급       | PM10 (μg/m³) | PM2.5 (μg/m³) |
+|------------|--------------|---------------|
+| 좋음       | 0~30         | 0~15          |
+| 보통       | 31~80        | 16~35         |
+| 나쁨       | 81~150       | 36~75         |
+| 매우 나쁨  | 151 이상     | 76 이상       |
 
 ---
 
 ## 📂 분석에 사용한 데이터셋
 
-![NewYork Airbnb](/img/nyairbnb.jpg)
+Google Earth Engine
 
-**데이터 출처:** [뉴욕 에어비앤비 Open Data](https://www.kaggle.com/datasets/arianazmoudeh/airbnbopendata)  
-**데이터 내용:** 뉴욕의 에어비앤비 숙소 정보, 가격, 리뷰 수, 예약 가능 일수 등
-
+**데이터 내용:** 
+도시별 미세먼지 및 초 미세먼지 농도
 ## 기술 스택
 ### 데이터 시각화
 
-<img src="https://img.shields.io/badge/pandas-FF7900?style=for-the-badge&%20api&logoColor=orange"> |<img src="https://img.shields.io/badge/matplotlib-7A1FA2?style=for-the-badge&logoColor=purple">|<img src="https://img.shields.io/badge/Python-000000?style=for-the-badge&logo=%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EC%A0%95%EC%A0%9C&logoColor=white">|
+<img src="https://img.shields.io/badge/pandas-FF7900?style=for-the-badge&%20api&logoColor=orange"> |<img src="https://img.shields.io/badge/matplotlib-7A1FA2?style=for-the-badge&logoColor=purple">|<img src="https://img.shields.io/badge/Python-000000?style=for-the-badge&logo=%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EC%A0%95%EC%A0%9C&logoColor=white">| <img src="https://img.shields.io/badge/StreamLit-red?style=for-the-badge&logoColor=white">|
 
 
 
@@ -144,167 +135,7 @@ airbnb_df = pd.read_csv('./data/Airbnb_Open_Data.csv',low_memory=False)
 <figcaption>결측치 탐색</figcaption>
 </figure>
 
-1. **불필요한 column 제거**
-    ```
-        host_name
-        country
-        country_code
-        calculated host listings count
-        license
-        house_rules
-        last review
-        instant_bookable
-        long
-        lat
-        NAME
-        host id
-        host_identity_verified
-        host name
-    ```
-- 결측치 제거
-    ```
-    cancellation_policy
-    neighbourhood 
-    neighbourhood group
-    Construction year
-    availability 365
-    ```
-- 결측치 치환
-    ```
-    minimum nights
-    number of reviews 
-    service fee
-    price
-    reviews per month
-    number of reviews
-    review rate number
-    availability 365
-    ```
-- 이상치 탐색
-    ```
-    minimum nights
-    number of reviews
-    price
-    service fee
-    reviews per month
-    number of reviews
-    review rate number
-    availability 365
-    ```
-
-
-## 데이터 정제 및 전처리
-### • 결측치 치환
-```python
-def fillna(df,columns,default=0):
-    for column in columns:
-        df[column] = df[column].fillna(default)
-    return df
-```
-### • 결측치 제거
-```python
-def dropna(df,column_list):
-    df = df.dropna(subset=column_list,axis=0)
-    return df
-```
-### • 데이터 타입 변환
-```python
-def change_type(df,columns,type):
-    for column in columns:
-        df[column] = df[column].astype(type)
-    return df
-```
-### • 이상치 제거
-```python
-def cleaned_data(df: pd.DataFrame, columns: List[str], value: Union[int, float, List[Union[int, float]]], compare_type: str) -> pd.DataFrame:
-    if not columns:
-        raise ValueError("컬럼 리스트가 비어있습니다.")
-    
-    if compare_type == "over":
-        if not isinstance(value, (int, float)):
-            raise TypeError("value가 숫자가 아닙니다.")
-        for column in columns:
-            df = df[df[column] < value]
-    elif compare_type == "under":
-        if not isinstance(value, (int, float)):
-            raise TypeError("value가 숫자가 아닙니다.")
-        for column in columns:
-            df = df[df[column] > value]
-    elif compare_type == "between":
-        if not isinstance(value, (list, tuple)) or len(value) != 2:
-            raise TypeError("value가 리스트 또는 튜플이 아니거나 길이가 2가 아닙니다.")
-        lower, upper = value[0], value[1]
-        for column in columns:
-            df = df[(df[column] > lower) & (df[column] < upper)]
-    else:
-        raise ValueError(f"Invalid compare_type: {compare_type}. Use 'over', 'under', or 'between'")
-    return df
-```
-### • 함수 활용
-```python
-# room type 별 평균 가격 계산
-room_type_avg_price = airbnb_df.groupby('room type')['price'].mean()
-# 데이터 전처리
-airbnb_df = fillna(airbnb_df,['price'],airbnb_df['room type'].map(room_type_avg_price))
-airbnb_df = fillna(airbnb_df,['minimum nights','availability 365'],1)
-airbnb_df = fillna(airbnb_df,['service fee','number of reviews','review rate number'])
-airbnb_df = fillna(airbnb_df,['reviews per month'],airbnb_df['review rate number']/12)
-airbnb_df = dropna(airbnb_df,['Construction year','neighbourhood group','cancellation_policy'])
-# 이상치 제거
-airbnb_df = cleaned_data(airbnb_df,['price'],[50,1000],'between')
-airbnb_df = cleaned_data(airbnb_df,['availability 365'],[100,365],'between')
-airbnb_df = cleaned_data(airbnb_df,['number of reviews'],100,'over')
-airbnb_df = cleaned_data(airbnb_df,['minimum nights'],0,'under')
-# 타입 변화
-airbnb_df = change_type(airbnb_df,['availability 365','number of reviews','Construction year','price','service fee'],int)
-airbnb_df['availability 365'] = round((365 - airbnb_df['availability 365']) / 365, 2)
-airbnb_df['price'] = airbnb_df['price'] * 1400
-airbnb_df['service fee'] = airbnb_df['service fee'] *1400
-```
-
-### • 라벨 인코딩
-```python
-# Label Encoder 초기화
-le_neighbourhood = LabelEncoder()
-le_cancellation = LabelEncoder()
-le_room_type = LabelEncoder()
-
-# 범주형 데이터에 Label Encoding 적용
-airbnb_df['neighbourhood group'] = le_neighbourhood.fit_transform(airbnb_df['neighbourhood group'])
-airbnb_df['cancellation_policy'] = le_cancellation.fit_transform(airbnb_df['cancellation_policy'])
-airbnb_df['room type'] = le_room_type.fit_transform(airbnb_df['room type'])
-# 취소 정책의 유연성에 따라 데이터 처리
-airbnb_df['cancellation_policy'] = 2 - airbnb_df['cancellation_policy']
-
-```
-
-# 결측치 제거 확인
-<figure  style="text-align: center;">
-<img src="./img/결측치%20제거%20및%20치환.png">
-<figcaption>가격과 리뷰 수의 관계 산점도</figcaption>
-</figure>
-
-# 데이터 시각화를 통한 탐색
-
-## 숙소 선호 상관 관계 히트맵
-<figure style="display: flex; justify-content: center; gap: 20px; text-align: center; flex-wrap: wrap;">
-  <div style="flex: 1; max-width: 50%;">
-    <img src="./img/숙소%20선호도%20상관%20관계.png" style="width: 100%; height: auto;">
-    <figcaption>숙소 선호 상관 관계</figcaption>
-  </div>
-
-  <div style="flex: 1; max-width: 50%;">
-    <img src="./img/예약에%20영향을%20주는%20상관관계.png" style="width: 100%; height: auto;">
-    <figcaption>예약에 영향을 주는 상관관계</figcaption>
-  </div>
-</figure>
-
-
-<figure  style="text-align: center;">
-<img src="./img/가격과%20리뷰%20수의%20관계.png">
-<figcaption>가격과 리뷰 수의 관계 산점도</figcaption>
-</figure>
-
+ㅣㄴ
 
 # 📌 에어비앤비 데이터 분석 결론
 
