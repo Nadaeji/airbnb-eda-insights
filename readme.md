@@ -3,36 +3,22 @@
 # 🐕 팀원 소개
 > **GitHub** 
 <div align="center">
-  <table width="100%">
-    <tbody>
-      <tr>
-        <td align="center" width="25%">
-          <a href="https://github.com/Nadaeji">
-            <img src="./image/04.jpg" width="180" height="180" alt="jiyoon"><br>
-            <strong>나지윤</strong>
-          </a>
-        </td>
-        <td align="center" width="25%">
-          <a href="https://github.com/SHINJINSEUL">
-            <img src="./image/02.jpg" width="180" height="180" alt="jinseul"><br>
-            <strong>신진슬</strong>
-          </a>
-        </td>
-        <td align="center" width="25%">
-          <a href="https://github.com/comet39">
-            <img src="./image/01.jpg" width="180" height="180" alt="hyeondae"><br>
-            <strong>이현대</strong>
-          </a>
-        </td>
-        <td align="center" width="25%">
-          <a href="https://github.com/yubnyx">
-            <img src="./image/03.jpg" width="180" height="180" alt="yubin">
-            <strong>전유빈</strong>
-          </a>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+<table width="80%" cellspacing="0" cellpadding="12" border="0">
+  <tbody>
+    <tr>
+      <td align="center" width="25%"><img src="./image/04.jpg" width="180" height="180" alt="나지윤"></td>
+      <td align="center" width="25%"><img src="./image/02.jpg" width="180" height="180" alt="신진슬"></td>
+      <td align="center" width="25%"><img src="./image/01.jpg" width="180" height="180" alt="이현대"></td>
+      <td align="center" width="25%"><img src="./image/03.jpg" width="180" height="180" alt="전유빈"></td>
+    </tr>
+    <tr>
+      <td align="center"><a href="https://github.com/Nadaeji"><strong>나지윤</strong></a></td>
+      <td align="center"><a href="https://github.com/SHINJINSEUL"><strong>신진슬</strong></a></td>
+      <td align="center"><a href="https://github.com/kicet3"><strong>이현대</strong></a></td>
+      <td align="center"><a href="https://github.com/yubnyx"><strong>전유빈</strong></a></td>
+    </tr>
+  </tbody>
+</table>
 </div>
 
 ---
